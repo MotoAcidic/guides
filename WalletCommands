@@ -38,6 +38,7 @@ getnextsuperblock
 getpoolinfo
 listmasternodeconf ( "filter" )
 listmasternodes ( "filter" )
+masternodelist
 masternode "command"...
 masternodeconnect "address"
 masternodecurrent
