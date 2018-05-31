@@ -7,22 +7,27 @@ wget -q https://raw.githubusercontent.com/ipsum-network/guides/master/scripts/ip
 # Step 2
 ```
 chmod +x ipsum_setup.sh
-chmod +x ./ipsum_setup.sh install
 
 ```
 # Step 3
+
+```
+./ipsum_setup.sh install
+
+```
+# Step 4
 
 ```
 watch ips-cli getinfo
 
 ```
 
-# Step 4
+# Step 5
 ```    
 apt install upstart
 
 ```
-# Step 5
+# Step 6
 ```    
 systemctl start Ips
 
