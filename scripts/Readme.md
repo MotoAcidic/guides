@@ -1,12 +1,13 @@
 # Installation guide for running the IPS VPS script
 # Step 1
 ```    
-wget -q https://github.com/ipsum-network/guides/blob/master/scripts/ipsum_setup.sh
+wget -q https://raw.githubusercontent.com/ipsum-network/guides/master/scripts/ipsum_setup.sh
 
 ```
 # Step 2
 ```
-bash ips_install.sh
+chmod +x ipsum_setup.sh
+chmod +x ./ipsum_setup.sh install
 
 ```
 # Step 3
