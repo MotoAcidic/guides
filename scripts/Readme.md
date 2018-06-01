@@ -1,18 +1,18 @@
 # Installation guide for running the IPS VPS script
 # Step 1
 ```    
-wget -q https://raw.githubusercontent.com/MotoAcidic/guides/master/scripts/ipsum_setup.sh
+wget -q https://raw.githubusercontent.com/MotoAcidic/guides/master/scripts/ips_install.sh
 
 ```
 # Step 2
 ```
-chmod +x ipsum_setup.sh
+chmod +x ips_install.sh
 
 ```
 # Step 3
 
 ```
-./ipsum_setup.sh install
+./ips_install.sh install
 
 ```
 # Step 4
