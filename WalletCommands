@@ -1,4 +1,4 @@
-# == Blockchain ==
+== Blockchain ==
 getbestblockhash
 getblock "hash" ( verbose )
 getblockchaininfo
@@ -13,17 +13,17 @@ gettxout "txid" n ( includemempool )
 gettxoutsetinfo
 verifychain ( checklevel numblocks )
 
-# == Control ==
+== Control ==
 getinfo
 help ( "command" )
 stop
 
-# == Generating ==
+== Generating ==
 getgenerate
 gethashespersec
 setgenerate generate ( genproclimit )
 
-# == Ips ==
+== Ips ==
 checkbudgets
 createmasternodekey
 getbudgetinfo ( "proposal" )
@@ -54,7 +54,7 @@ spork <name> [<value>]
 startmasternode "local|all|many|missing|disabled|alias" lockwallet ( "alias" )
 submitbudget "proposal-name" "url" payment-count block-start "ips-address" monthy-payment "fee-tx"
 
-# == Mining ==
+== Mining ==
 getblocktemplate ( "jsonrequestobject" )
 getmininginfo
 getnetworkhashps ( blocks height )
@@ -62,7 +62,7 @@ prioritisetransaction <txid> <priority delta> <fee delta>
 reservebalance ( reserve amount )
 submitblock "hexdata" ( "jsonparametersobject" )
 
-# == Network ==
+== Network ==
 addnode "node" "add|remove|onetry"
 getaddednodeinfo dns ( "node" )
 getconnectioncount
@@ -71,7 +71,7 @@ getnetworkinfo
 getpeerinfo
 ping
 
-# == Rawtransactions ==
+== Rawtransactions ==
 createrawtransaction [{"txid":"id","vout":n},...] {"address":amount,...}
 decoderawtransaction "hexstring"
 decodescript "hex"
@@ -86,7 +86,7 @@ estimatepriority nblocks
 validateaddress "ipsaddress"
 verifymessage "ipsaddress" "signature" "message"
 
-# == Wallet ==
+== Wallet ==
 addmultisigaddress nrequired ["key",...] ( "account" )
 autocombinerewards true|false ( threshold )
 backupwallet "destination"
