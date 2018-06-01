@@ -1,5 +1,30 @@
 #!/bin/bash
 
+-cd ~
+-echo "****************************************************************************"
+-echo "****************************************************************************"
+-echo "*****************************IPSUM Community Script*************************"
+-echo "****************************************************************************"
+-echo "****************************************************************************"
+-echo "********************This script was forked from XeZZoR**********************"
+-echo "****************************************************************************"
+-echo "* Ubuntu 16.04 is the recommended opearting system for this install.       *"
+-echo "*                                                                          *"
+-echo "* This script will install and configure your IPSUM Coin Masternode.       *"
+-echo "****************************************************************************"
+-echo && echo && echo
+-echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+-echo "!                                                 !"
+-echo "! Make sure you double check before hitting enter !"
+-echo "! This will install version 3.1.0                 !"
+-echo "!                                                 !"
+-echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+-echo && echo && echo
+-
+-echo "Do you want to install all needed dependencies (no if you did it before)? [y/n]"
+-read DOSETUP
+
+
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='ips.conf'
 CONFIGFOLDER='/root/.ips'
@@ -123,110 +148,13 @@ maxconnections=256
 masternode=1
 externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
-addnode=167.99.234.180
-addnode=198.199.96.58
-addnode=159.65.67.167
-addnode=167.99.155.35
-addnode=185.121.139.157
-addnode=194.67.195.147
-addnode=94.177.201.230
-addnode=45.77.23.168
-addnode=144.76.186.55
-addnode=144.76.186.56
-addnode=139.99.113.246
-addnode=139.99.113.247
-addnode=139.99.98.157
-addnode=139.99.38.114
-addnode=144.202.57.180
-addnode=173.212.225.221
-addnode=185.220.121.247
-addnode=35.185.2.50
-addnode=188.166.118.9
-addnode=51.15.232.225
-addnode=51.15.225.60
-addnode=188.25.103.55
-addnode=198.13.62.116
-addnode=194.182.82.178
-addnode=45.76.166.121
-addnode=144.168.44.229
-addnode=45.76.33.250
-addnode=149.28.96.193
-addnode=35.196.130.190
-addnode=159.89.116.47
-addnode=46.166.139.73
-addnode=46.166.139.95
-addnode=45.32.21.74
-addnode=149.28.27.230
-addnode=149.28.23.219
-addnode=140.82.43.191
-addnode=40.121.194.132
-addnode=138.91.121.171
-addnode=45.32.221.232
-addnode=149.28.173.153
-addnode=107.191.50.171
-addnode=185.121.139.157
-addnode=45.22.221.131
-addnode=144.202.28.53
-addnode=45.76.253.201
-addnode=144.202.28.144
-addnode=149.28.102.150
-addnode=144.202.23.78
-addnode=144.202.22.172
-addnode=144.202.23.187
-addnode=149.28.121.45
-addnode=217.69.0.88
-addnode=217.69.0.114
-addnode=159.65.135.91
-addnode=207.148.77.233
-addnode=108.61.162.217
-addnode=207.148.97.65
-addnode=207.148.122.106
-addnode=245.77.177.38
-addnode=104.238.183.17
-addnode=207.148.116.69
-addnode=45.76.220.103
-addnode=45.32.242.137
-addnode=199.247.1.16
-addnode=149.28.37.122
-addnode=63.209.33.175
-addnode=45.77.223.47
-addnode=45.77.136.185
-addnode=217.69.0.111
-addnode=68.114.79.172
-addnode=108.61.198.246
-addnode=165.227.171.94
-addnode=178.62.103.151
-addnode=167.99.217.240
-addnode=159.89.158.211
-addnode=45.76.46.69
-addnode=45.32.187.55
-addnode=45.76.46.69
-addnode=45.32.187.55
-addnode=149.28.141.194
-addnode=149.28.135.209
-addnode=128.199.112.233
-addnode=40.121.194.132
-addnode=138.91.121.171
-addnode=195.252.93.101
-addnode=207.246.95.107
-addnode=206.189.154.226
-addnode=104.236.113.239
-addnode=108.160.141.190
-addnode=85.255.10.10
-addnode=107.175.144.2
-addnode=185.121.139.157
-addnode=51.38.176.68
-addnode=79.137.83.22
-addnode=139.99.98.35
-addnode=139.99.98.88
-addnode=139.99.98.89
-addnode=149.28.173.153
-addnode=207.148.81.143
-addnode=149.28.173.225
-addnode=107.175.115.253
-addnode=107.175.115.76
-addnode=140.82.46.194
-addnode=108.61.173.213
+
+  wget -q https://github.com/ipsum-network/seeds/raw/master/README.md
+  LINES=$(< README.md wc -l)
+  END=$((LINES - 1))
+  sed -n "7,$END p" < README.md > SEED_NODES
+
+  cat CONF_TEMP SEED_NODES > $CONF_DIR/$CONF_FILE
 EOF
 }
 
