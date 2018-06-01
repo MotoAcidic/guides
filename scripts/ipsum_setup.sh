@@ -189,3 +189,5 @@ cd ips-3.1.0/bin/
 ./ipsd
 
 watch ips-cli getinfo
+
+fi
