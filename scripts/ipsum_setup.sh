@@ -97,7 +97,7 @@ echo "staking=1" >> $CONF_DIR/$CONF_FILE
 echo "txindex=1" >> $CONF_DIR/$CONF_FILE
 echo "logtimestamps=1" >> $CONF_DIR/$CONF_FILE
 echo "masternode=1" >> $CONF_DIR/$CONF_FILE
-echo "port=22331" >> $CONF_DIR/$CONF_FILE`
+echo "port=22331" >> $CONF_DIR/$CONF_FILE
 echo "externalip=$IP:22331" >> $CONF_DIR/$CONF_FILE
 echo "masternodeprivkey=$PRIVKEY" >> $CONF_DIR/$CONF_FILE
 echo "addnode=167.99.234.180" >> $CONF_DIR/$CONF_FILE
@@ -190,4 +190,4 @@ cd ips-3.1.0/bin/
 
 watch ips-cli getinfo
 
-fi
+
