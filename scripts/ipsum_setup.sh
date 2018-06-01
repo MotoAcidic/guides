@@ -17,6 +17,7 @@ echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "!                                                 !"
 echo "! Make sure you double check before hitting enter !"
 echo "! This will install version 3.1.0                 !"
+echo "!  MATT IS A MEGA NOOB NOT LEGIT H2A 50           !"
 echo "!                                                 !"
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo && echo && echo
