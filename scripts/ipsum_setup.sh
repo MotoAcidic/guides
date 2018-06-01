@@ -179,15 +179,14 @@ echo "addnode=45.76.46.69" >> $CONF_DIR/$CONF_FILE
 echo "addnode=45.32.187.55" >> $CONF_DIR/$CONF_FILE
 echo "addnode=45.76.46.69" >> $CONF_DIR/$CONF_FILE
 echo "addnode=45.32.187.55" >> $CONF_DIR/$CONF_FILE
-
-
 sudo ufw allow $PORT/tcp
+sudo apt-get install -y fail2ban
 
 
 cd ips-3.1.0/bin/
 
 ./ipsd
+watch ./ips-cli getinfo
 
-watch ips-cli getinfo
 
 
