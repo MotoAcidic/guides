@@ -3,7 +3,7 @@
 cd ~
 echo "****************************************************************************"
 echo "****************************************************************************"
-echo "*****************************CryptoNeverSleeps******************************"
+echo "*****************************IPSUM Community Script*************************"
 echo "****************************************************************************"
 echo "****************************************************************************"
 echo "********************This script was forked from XeZZoR**********************"
@@ -16,6 +16,7 @@ echo && echo && echo
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "!                                                 !"
 echo "! Make sure you double check before hitting enter !"
+echo "! This will install version 3.1.0                 !"
 echo "!                                                 !"
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo && echo && echo
@@ -70,6 +71,10 @@ echo ""
 echo "Configure your masternodes now!"
 echo "Type the IP of this server, followed by [ENTER]:"
 read IP
+echo "Enter your RPC username you want to use."
+read RPCUser
+echo "Enter your RPC password you want to use."
+read RPCPass
 
 echo ""
 echo "Enter masternode private key for node $ALIAS"
@@ -80,8 +85,8 @@ CONF_FILE=ips.conf
 PORT=22331
 
 mkdir -p $CONF_DIR
-echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> $CONF_DIR/$CONF_FILE
-echo "rpcpassword=pass"`shuf -i 100000-10000000 -n 1` >> $CONF_DIR/$CONF_FILE
+echo "rpcuser=$RPCUser" >> $CONF_DIR/$CONF_FILE
+echo "rpcpassword=$RPCPass" >> $CONF_DIR/$CONF_FILE
 echo "rpcallowip=127.0.0.1" >> $CONF_DIR/$CONF_FILE
 echo "rpcport=22332" >> $CONF_DIR/$CONF_FILE
 echo "listen=1" >> $CONF_DIR/$CONF_FILE
@@ -91,6 +96,9 @@ echo "staking=1" >> $CONF_DIR/$CONF_FILE
 echo "txindex=1" >> $CONF_DIR/$CONF_FILE
 echo "logtimestamps=1" >> $CONF_DIR/$CONF_FILE
 echo "masternode=1" >> $CONF_DIR/$CONF_FILE
+echo "port=22331" >> $CONF_DIR/$CONF_FILE`
+echo "externalip=$IP:22331" >> $CONF_DIR/$CONF_FILE
+echo "masternodeprivkey=$PRIVKEY" >> $CONF_DIR/$CONF_FILE
 echo "addnode=167.99.234.180" >> $CONF_DIR/$CONF_FILE
 echo "addnode=198.199.96.58" >> $CONF_DIR/$CONF_FILE
 echo "addnode=159.65.67.167" >> $CONF_DIR/$CONF_FILE
@@ -170,14 +178,13 @@ echo "addnode=45.76.46.69" >> $CONF_DIR/$CONF_FILE
 echo "addnode=45.32.187.55" >> $CONF_DIR/$CONF_FILE
 echo "addnode=45.76.46.69" >> $CONF_DIR/$CONF_FILE
 echo "addnode=45.32.187.55" >> $CONF_DIR/$CONF_FILE
-echo "port=$PORT" >> $CONF_DIR/$CONF_FILE
-echo "bind=$IP" >> $CONF_DIR/$CONF_FILE
-echo "externalip=$IP:$PORT" >> $CONF_DIR/$CONF_FILE
-echo "masternodeaddr=$IP:$PORT" >> $CONF_DIR/$CONF_FILE
-echo "masternodeprivkey=$PRIVKEY" >> $CONF_DIR/$CONF_FILE
+
+
 sudo ufw allow $PORT/tcp
-sudo apt-get install -y fail2ban
+
 
 cd ips-3.1.0/bin/
 
 ./ipsd
+
+watch ips-cli getinfo
