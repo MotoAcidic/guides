@@ -1,0 +1,138 @@
+These commands can be used inside your Windows / Linux wallets.
+
+
+== Blockchain Related Commands ==
+getbestblockhash
+getblock "hash" ( verbose )
+getblockchaininfo
+getblockcount
+getblockhash index
+getblockheader "hash" ( verbose )
+getchaintips
+getdifficulty
+getmempoolinfo
+getrawmempool ( verbose )
+gettxout "txid" n ( includemempool )
+gettxoutsetinfo
+verifychain ( checklevel numblocks )
+
+== Control Related Commands==
+getinfo
+help ( "command" )
+stop
+
+== Generating Related Commands==
+getgenerate
+gethashespersec
+setgenerate generate ( genproclimit )
+
+== Ips Related Commands==
+checkbudgets
+createmasternodekey
+getbudgetinfo ( "proposal" )
+getbudgetprojection
+getbudgetvotes "proposal-name"
+getmasternodecount
+getmasternodeoutputs
+getmasternodescores ( blocks )
+getmasternodestatus
+getmasternodewinners ( blocks "filter" )
+getnextsuperblock
+getpoolinfo
+listmasternodeconf ( "filter" )
+listmasternodes ( "filter" )
+masternodelist
+masternode "command"...
+masternodeconnect "address"
+masternodecurrent
+masternodedebug
+mnbudget "command"... ( "passphrase" )
+mnbudgetrawvote "masternode-tx-hash" masternode-tx-index "proposal-hash" yes|no time "vote-sig"
+mnbudgetvote "local|many|alias" "votehash" "yes|no" ( "alias" )
+mnfinalbudget "command"... ( "passphrase" )
+mnsync "status|reset"
+obfuscation <ipsaddress> <amount>
+preparebudget "proposal-name" "url" payment-count block-start "ips-address" monthy-payment
+spork <name> [<value>]
+startmasternode "local|all|many|missing|disabled|alias" lockwallet ( "alias" )
+submitbudget "proposal-name" "url" payment-count block-start "ips-address" monthy-payment "fee-tx"
+
+== Mining Related Commands==
+getblocktemplate ( "jsonrequestobject" )
+getmininginfo
+getnetworkhashps ( blocks height )
+prioritisetransaction <txid> <priority delta> <fee delta>
+reservebalance ( reserve amount )
+submitblock "hexdata" ( "jsonparametersobject" )
+
+== Network Related Commands==
+addnode "node" "add|remove|onetry"
+getaddednodeinfo dns ( "node" )
+getconnectioncount
+getnettotals
+getnetworkinfo
+getpeerinfo
+ping
+
+== Rawtransactions Related Commands==
+createrawtransaction [{"txid":"id","vout":n},...] {"address":amount,...}
+decoderawtransaction "hexstring"
+decodescript "hex"
+getrawtransaction "txid" ( verbose )
+sendrawtransaction "hexstring" ( allowhighfees )
+signrawtransaction "hexstring" ( [{"txid":"id","vout":n,"scriptPubKey":"hex","redeemScript":"hex"},...] ["privatekey1",...] sighashtype )
+
+== Util Related Commands==
+createmultisig nrequired ["key",...]
+estimatefee nblocks
+estimatepriority nblocks
+validateaddress "ipsaddress"
+verifymessage "ipsaddress" "signature" "message"
+
+== Wallet Related Commands==
+addmultisigaddress nrequired ["key",...] ( "account" )
+autocombinerewards true|false ( threshold )
+backupwallet "destination"
+bip38decrypt "ipsaddress"
+bip38encrypt "ipsaddress"
+dumpprivkey "ipsaddress"
+dumpwallet "filename"
+getaccount "ipsaddress"
+getaccountaddress "account"
+getaddressesbyaccount "account"
+getbalance ( "account" minconf includeWatchonly )
+getnewaddress ( "account" )
+getrawchangeaddress
+getreceivedbyaccount "account" ( minconf )
+getreceivedbyaddress "ipsaddress" ( minconf )
+getstakesplitthreshold
+getstakingstatus
+gettransaction "txid" ( includeWatchonly )
+getunconfirmedbalance
+getwalletinfo
+importaddress "address" ( "label" rescan )
+importprivkey "ipsprivkey" ( "label" rescan )
+importwallet "filename"
+keypoolrefill ( newsize )
+listaccounts ( minconf includeWatchonly)
+listaddressgroupings
+listlockunspent
+listreceivedbyaccount ( minconf includeempty includeWatchonly)
+listreceivedbyaddress ( minconf includeempty includeWatchonly)
+listsinceblock ( "blockhash" target-confirmations includeWatchonly)
+listtransactions ( "account" count from includeWatchonly)
+listunspent ( minconf maxconf  ["address",...] )
+lockunspent unlock [{"txid":"txid","vout":n},...]
+move "fromaccount" "toaccount" amount ( minconf "comment" )
+multisend <command>
+sendfrom "fromaccount" "toipsaddress" amount ( minconf "comment" "comment-to" )
+sendmany "fromaccount" {"address":amount,...} ( minconf "comment" )
+sendtoaddress "ipsaddress" amount ( "comment" "comment-to" )
+sendtoaddressix "ipsaddress" amount ( "comment" "comment-to" )
+setaccount "ipsaddress" "account"
+setstakesplitthreshold value
+settxfee amount
+signmessage "ipsaddress" "message"
+walletlock
+walletpassphrase "passphrase" timeout ( anonymizeonly )
+walletpassphrasechange "oldpassphrase" "newpassphrase"
