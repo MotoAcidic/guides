@@ -1,4 +1,7 @@
-== Blockchain ==
+These commands can be used inside your Windows / Linux wallets.
+
+
+== Blockchain Related Commands ==
 getbestblockhash
 getblock "hash" ( verbose )
 getblockchaininfo
@@ -13,17 +16,17 @@ gettxout "txid" n ( includemempool )
 gettxoutsetinfo
 verifychain ( checklevel numblocks )
 
-== Control ==
+== Control Related Commands==
 getinfo
 help ( "command" )
 stop
 
-== Generating ==
+== Generating Related Commands==
 getgenerate
 gethashespersec
 setgenerate generate ( genproclimit )
 
-== Ips ==
+== Ips Related Commands==
 checkbudgets
 createmasternodekey
 getbudgetinfo ( "proposal" )
@@ -54,7 +57,7 @@ spork <name> [<value>]
 startmasternode "local|all|many|missing|disabled|alias" lockwallet ( "alias" )
 submitbudget "proposal-name" "url" payment-count block-start "ips-address" monthy-payment "fee-tx"
 
-== Mining ==
+== Mining Related Commands==
 getblocktemplate ( "jsonrequestobject" )
 getmininginfo
 getnetworkhashps ( blocks height )
@@ -62,7 +65,7 @@ prioritisetransaction <txid> <priority delta> <fee delta>
 reservebalance ( reserve amount )
 submitblock "hexdata" ( "jsonparametersobject" )
 
-== Network ==
+== Network Related Commands==
 addnode "node" "add|remove|onetry"
 getaddednodeinfo dns ( "node" )
 getconnectioncount
@@ -71,7 +74,7 @@ getnetworkinfo
 getpeerinfo
 ping
 
-== Rawtransactions ==
+== Rawtransactions Related Commands==
 createrawtransaction [{"txid":"id","vout":n},...] {"address":amount,...}
 decoderawtransaction "hexstring"
 decodescript "hex"
@@ -79,14 +82,14 @@ getrawtransaction "txid" ( verbose )
 sendrawtransaction "hexstring" ( allowhighfees )
 signrawtransaction "hexstring" ( [{"txid":"id","vout":n,"scriptPubKey":"hex","redeemScript":"hex"},...] ["privatekey1",...] sighashtype )
 
-== Util ==
+== Util Related Commands==
 createmultisig nrequired ["key",...]
 estimatefee nblocks
 estimatepriority nblocks
 validateaddress "ipsaddress"
 verifymessage "ipsaddress" "signature" "message"
 
-== Wallet ==
+== Wallet Related Commands==
 addmultisigaddress nrequired ["key",...] ( "account" )
 autocombinerewards true|false ( threshold )
 backupwallet "destination"
